@@ -1,0 +1,35 @@
+root{
+    font-family: 'Merriweather', serif;
+    font-family: 'Rosarivo', cursive;
+}   
+
+
+ 
+#header{
+    background-size: cover;
+    background-position-y: 40%;
+    color: azure;
+    background-color: antiquewhite;
+    position: relative;
+}
+
+/* City Name Style */
+#header h1 {
+    font-size: 500%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-shadow: 0px 5px 5px cornsilk;
+}
+
+
+/* Search Width */
+#city-search{
+    width: 50%;
+}
+
+/* Icon and button*/
+#search-button{
+    width: 50px;
+    display: inline-block;
+}
