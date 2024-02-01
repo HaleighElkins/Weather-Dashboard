@@ -3,7 +3,10 @@ root{
     font-family: 'Rosarivo', cursive;
 }   
 
-
+.jumbotron{
+    padding:1rm;
+    border-radius: 0;;
+}
  
 #header{
     background-size: cover;
@@ -32,4 +35,16 @@ root{
 #search-button{
     width: 50px;
     display: inline-block;
+}
+
+#current-weather {
+    padding-left: 15px;
+}
+
+/* Clear storage */
+#clear-storage {
+    color:blanchedalmond;
+    /* text-decoration: none; */
+    font-size: .75em;
+    margin: .5em 0em 0em .5em;
 }
