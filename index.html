@@ -22,37 +22,35 @@
     <title>Weather Dashboard</title>
 </head>
 
-
+<!-- Another header to test out -->
 
 <body>
+    <header class="container-fluid text-center text-white bg-light p-2">
+      <h1>Weather Dashboard</h1>
+    </header>
+
+<!-- <body> -->
     <!-- Header> -->
-    <div id="header" class="jumbotron jumbotron-fulid text-container">
+    <!-- <div id="header" class="jumbotron jumbotron-fulid text-container">
         <h1 id="header-text" class="display-2"></h1>
         <div id="artist-credit"></div>
-    </div>
+    </div> -->
 
 
 
-    <!-- Main Container -->
+    <!-- Main Container for city search -->
     <div id="content" class="container">
         <div class="row">
 
-            <!-- Left aside for search box -->
-            <div id="left-content" clas="col-md-4">
-                <form>
-                    <label for="city-search">Search for a City:</label>
-                    <div class="form-row">
-                        <input id="city-search" clas="control-form" name="city"></input>
-                        <!-- Magnifing class -->
-                        <button id="search-button" clas="btn btn-primary" type="submit"><i
-                                class="fas fa-search"></i></button>
-                    </div>
-                </form>
-                <div id="error-search"></div>
-                <!-- clear storage button -->
-                <a id="clear-storage" href="#"></a>
-            </div>
-
+                <div class="container-fluid">
+                    <div class="row">
+                      <aside class="col-lg-3 bg-light">
+                        <h5 class="mt-1">Search for a City:</h5>
+                        <div class="form-inline form-group">
+                          <input class="form-control" type="text" id="search-value" />
+                          <button class="btn btn-primary" id="search-button"> <i class="fa fa-search"></i> </button>
+                        </div>
+        
 
             <!-- Right aside for current weeather for city -->
             <div id="right-content" class="col-md-9 pt-5">
@@ -64,14 +62,24 @@
 
 
 
+            <ul class="list-group history"></ul>
+        </aside>
+  ​
+        <div class="col-lg-9">
+          <div id="today" class="mt-3"></div>
+          <div id="forecast" class="card-deck mt-3"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
 
             <!-- All script pages -->
 
             <!-- jQuery -->
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <!-- Bootstrap -->
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
             <!-- My JS Script -->
             <script src="assets/js/script.js"></script>
 
