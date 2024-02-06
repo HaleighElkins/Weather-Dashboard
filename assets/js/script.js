@@ -78,7 +78,7 @@ for (var i = 0; i < history.length; i++) {
 // puts the searched cities underneath the previous 
 function createRow(text) {
     var listItem = $("<li>").addClass("list-group-item").text(text);
-    $("history").append(listItem);
+    $(".history").append(listItem);
 }
 
 // click function listener
@@ -110,7 +110,7 @@ function weatherFunction(searchTerm) {
 
         var card = $("<div>").addClass("card");
         var cardBody = $("<div>").addClass("card-body");
-        var wind = $("<p>").addClass("card-text").text("wind speed: " + data.wind.speed + " MPH");
+        var wind = $("<p>").addClass("card-text").text("Wind speed: " + data.wind.speed + " MPH");
         var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + " %");
         var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " K");
 
