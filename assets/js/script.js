@@ -58,14 +58,6 @@ function weatherForecast(searchTerm) {
 }
 
 
-
-// merging on the page
-colFive.append(cardFive.append(cardBodyFive.append(titleFive, imgFive, tempFive, humidFive)));
-
-// append card to col
-$("#forecasrt . row").append(colFive);
-
-
 // Function to pull previous searches
 var history = JSON.parse(localStorage.getItem("history")) || [];
 
@@ -114,102 +106,94 @@ function weatherFunction(searchTerm) {
         var card = $("<div>").addClass("card");
         var cardBody = $("<div>").addClass("card-body");
         var wind = $("<p>").addClass("card-text").text("wind speed: " + data.wind.speed + " MPH");
-        var humid = $("<p>").addClass("card-text").text("Humidity: " + data.min.humidity + " %");
-        var temp = $("<p>").addClass("card-text").text("Temperature: " + data.min.temp + " K");
-        console.log (temp-data);
+        var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + " %");
+        var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " K");
+
+        console.log(temp - data);
 
         var lon = data.coord.lon;
         var lat = data.coord.lat;
 
+
+
         $.ajax({
             type: "GET",
             url: "https://api.openweathermap.org/data/2.5/uvi?appid=9f112416334ce37769e5c8683b218a0d&lat=" + lat + "&lon=" + lon,
-
-
-
-
-
-
-
-
         }).then(function (response) {
             console.log(response);
-    
             var uvColor;
             var uvResponse = response.value;
             var uvIndex = $("<p>").addClass("card-text").text("UV Index: ");
             var btn = $("<span>").addClass("btn btn-sm").text(uvResponse);
-    
-    
+
+
             if (uvResponse < 3) {
-              btn.addClass("btn-success");
+                btn.addClass("btn-success");
             } else if (uvResponse < 7) {
-              btn.addClass("btn-warning");
+                btn.addClass("btn-warning");
             } else {
-              btn.addClass("btn-danger");
+                btn.addClass("btn-danger");
             }
-    
+
             cardBody.append(uvIndex);
             $("#today .card-body").append(uvIndex.append(btn));
-    
-          });
-    
-          // merge and add to page
-          title.append(img);
-          cardBody.append(title, temp, humid, wind);
-          card.append(cardBody);
-          $("#today").append(card);
-          console.log(data);
         });
-      }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // merge and add to page
+        title.append(img);
+        cardBody.append(title, temp, humid, wind);
+        card.append(cardBody);
+        $("#today").append(card);
+        console.log(data);
+    });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
