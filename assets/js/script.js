@@ -1,24 +1,28 @@
 $(document).ready(function () {
     // Search button
-    $("#search-button").on("click", function () {
-        // Get value
-        var searchTerm = $("#search-value").val();
+$("#search-button").on("click", function () {
+    // Get value
+    var searchTerm = $("#search-value").val();
+    // Check if searchTerm is not empty before making requests
+    if (searchTerm.trim() !== "") {
         // Empty input value field
         $("#search-value").val("");
         weatherForecast(searchTerm);
         weatherFunction(searchTerm);
-    });
+    }
 });
+
 
 // Search Button once pressing enter
 $("#search-button").keyup(function (event) {
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if (keycode === 13) {
-        var searchTerm = $("#search-button").val();
+        var searchTerm = $("#search-value").val();
         weatherFunction(searchTerm);
         weatherForecast(searchTerm);
     }
 });
+
 
 // function weatherForecast(searchTerm)
 function weatherForecast(searchTerm) {
@@ -84,10 +88,10 @@ $("history").on("click", "li", function () {
 });
 
 function weatherFunction(searchTerm) {
-
     $.ajax({
         type: "GET",
         url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchTerm + "&appid=9f112416334ce37769e5c8683b218a0d",
+    
 
     }).then(function (data) {
         if (history.indexOf(searchTerm) === -1) {
@@ -100,7 +104,8 @@ function weatherFunction(searchTerm) {
 
         $("#today").empty();
 
-        var title = $("<h3").addClass("card-title").text(data.name + " (" + new Date().toLocaleDateString() + ")")
+
+        var title = $("<h3>").addClass("card-title").text(data.name + " (" + new Date().toLocaleDateString() + ")");
         var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
 
         var card = $("<div>").addClass("card");
@@ -109,7 +114,7 @@ function weatherFunction(searchTerm) {
         var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + " %");
         var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " K");
 
-        console.log(temp - data);
+        console.log(data.main.temp);  
 
         var lon = data.coord.lon;
         var lat = data.coord.lat;
@@ -196,4 +201,4 @@ function weatherFunction(searchTerm) {
 
 
 
-
+})
