@@ -5,11 +5,11 @@ root {
 
 #forecast {
     position: absolute;
-    left:-2%
+    left:20%;
 }
 
 
 h1 {
     margin-bottom: 5%;
-    background-color: antiquewhite;
+    background-color: rgb(50, 66, 158);
 }
