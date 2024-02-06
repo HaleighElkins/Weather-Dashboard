@@ -82,7 +82,7 @@ function createRow(text) {
 }
 
 // click function listener
-$("history").on("click", "li", function () {
+$(".history").on("click", "li", function () {
     weatherFunction($(this).text());
     weatherForecast($(this).text());
 });
