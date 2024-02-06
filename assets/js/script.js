@@ -55,9 +55,10 @@ for (var i = 0; i < data.list.length; i++) {
 }
 
 // merging on the page
+colFive.append(cardFive.append(cardBodyFive.append(titleFive, imgFive, tempFive, humidFive)));
 
 // append card to col
-
+$("#forecasrt . row").append(colFive);
 
 
 
