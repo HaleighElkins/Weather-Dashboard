@@ -17,6 +17,7 @@ WHEN I click on a city in the search history
 
 # Deployment
 Live URL: 
+https://haleighelkins.github.io/Weather-Dashboard/ 
 
 
 
