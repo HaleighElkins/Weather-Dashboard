@@ -18,7 +18,11 @@ WHEN I click on a city in the search history
 # Deployment
 Live URL: 
 
+
+
 Screenshot: 
+
+<img width="958" alt="Screenshot 2024-02-08 113921" src="https://github.com/HaleighElkins/Weather-Dashboard/assets/152942336/7365be66-55bb-44a9-99ac-881168726cf6">
 # Credits
 
 [Fullstack ](https://stackoverflow.com/)
