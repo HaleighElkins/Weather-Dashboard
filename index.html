@@ -16,6 +16,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;1,400&family=Rosarivo&display=swap"
     rel="stylesheet">
+    <!-- JQurey -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <title>Weather Dashboard</title>
@@ -32,12 +35,14 @@
 
       <div class="container-fluid">
         <div class="row">
-          <aside class="col-lg-3 bg-light">
-            <h5 class="mt-1">Search for a City:</h5>
-            <div class="form-inline form-group">
+          <aside class="col-lg-3 bg-light"> 
+            <h5 class="mt-1">Search for a City:</h5>  
+              <div class="d-flex justify-content-between align-items-center">
               <input class="form-control" type="text" id="search-value" />
               <button class="btn btn-primary" id="search-button"> <i class="fa fa-search"></i> </button>
             </div>
+
+        
 
 
             <!-- Right aside for current weeather for city -->
@@ -48,9 +53,12 @@
               <!-- 5 day forecast -->
               <div id="five-day-forecast" class="mt-5 text-center">
                 <!-- Forecast content goes here -->
+                <div class="row" id="forecast-columns"></div>
               </div>
-
-              <ul class="list-group history"></ul>
+              
+              <ul class="list-group history list-group-margin">
+              
+            </ul>
           </aside>
           ​
           <div class="col-lg-9">
@@ -59,6 +67,12 @@
           </div>
         </div>
       </div>
+
+
+
+
+     
+    
 
       <!-- All script pages -->
 
