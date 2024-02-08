@@ -1,11 +1,8 @@
-root {
-    font-family: 'Merriweather', serif;
-    font-family: 'Rosarivo', cursive;
-}   
 
 #forecast {
     position: absolute;
-    left:30%;
+    left:34%;
+
 }
 
 
@@ -13,3 +10,4 @@ h1 {
     margin-bottom: 5%;
     background-color: rgb(50, 66, 158);
 }
+
